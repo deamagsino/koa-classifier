@@ -1,0 +1,70 @@
+body {
+    font-family: 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    color: #222;
+}
+header {
+    background-color: #003366;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    font-size: 1.5rem;
+}
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 2rem;
+}
+.upload-box, .info-box, .result-box {
+    max-width: 500px;
+    margin: 1rem;
+}
+.upload-box input[type="file"] {
+    width: 100%;
+    margin: 0.5rem 0;
+}
+.upload-box button {
+    padding: 0.5rem 1rem;
+    background-color: #009900;
+    color: white;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.grading-scale p {
+    margin: 0.2rem 0;
+}
+.instructions {
+    font-style: italic;
+    margin-top: 1rem;
+}
+.result-image {
+    max-width: 100%;
+    border: 1px solid #ccc;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+.classification {
+    font-size: 1.3rem;
+}
+.grade-green {
+    color: green;
+    font-weight: bold;
+}
+.pdf-button {
+    background-color: #009900;
+    color: white;
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 1rem;
+}
+.disclaimer {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 2rem;
+}

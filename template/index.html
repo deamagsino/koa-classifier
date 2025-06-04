@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Knee Osteoarthritis Classification System</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+  <header>
+    Knee Osteoarthritis Classification System
+  </header>
+
+  <!-- Homepage Upload Section -->
+  <div class="container">
+    <div class="upload-box">
+      <h2>Upload Knee X-Ray Scan</h2>
+      <form action="{% url 'resultsPage' %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Upload</button>
+      </form>
+      <div class="info-box">
+        <p>
+          The system takes image files of X-Ray scans of the knee, then classifies them according to
+          the Kellgren-Lawrence Grading System using Deep Learning, specifically Convolutional Neural Networks (CNNs).
+          <br><br>
+          This system uses the VGG-16 model with optimizer SGD, learning rate 0.0001, epoch size 30, batch size 8. It has an F1-score of 28.34%.
+          
+        </p>
+      </div>
+      <p class="instructions"><strong><em>Instructions:</em></strong> User must upload a knee X-Ray image (JPG, JPEG, and PNG only).</p>
+    </div>
+    <div class="info-box">
+      <p>Knee osteoarthritis (KOA) is the most prevalent type of osteoarthritis. 
+        With no existing cure, treatment is primarily focused on managing symptoms. 
+        Therefore, the timely detection of KOA is crucial for effective treatment planning and symptom management.</p>
+      <h3>Kellgren-Lawrence Grading Scale</h3>
+      <div class="grading-scale">
+        <p><strong>Grade 0:</strong> No radiographic OA present.</p>
+        <p><strong>Grade 1:</strong> Doubtful joint space narrowing and possible osteophyte lipping.</p>
+        <p><strong>Grade 2:</strong> Definite osteophytes and possible joint space narrowing (JSN) on AP radiograph.</p>
+        <p><strong>Grade 3:</strong> Multiple osteophytes, definite JSN, possible bony deformity.</p>
+        <p><strong>Grade 4:</strong> Large osteophytes, marked JSN, severe sclerosis, and definite bony deformity.</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>KOA Results PDF</title>
+</head>
+<body>
+    <h2>Knee Osteoarthritis Prediction Report</h2>
+
+    <p><strong>Session Time:</strong> {{ session_time }}</p>
+    <p><strong>Uploaded Image Filename:</strong> {{ filename }}</p>
+
+    <p><strong>Classification:</strong> {{ predicted_class }}</p>
+    <p><strong>Interpretation:</strong> {{ interpretation }}</p>
+
+    <h3>Uploaded Image</h3>
+    <img src="{{ image_path }}" width="150" style="display: block; margin: 0 auto;"><br>
+
+    <h3>Grad-CAM Heatmap</h3>
+    <img src="{{ gradcam_path }}" width="150" style="display: block; margin: 0 auto;">
+
+    <p><em>Disclaimer: This result is for informational use only. Consult a physician for medical advice.</em></p>
+</body>
+</html>
